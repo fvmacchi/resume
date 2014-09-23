@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+	<title>Francesco Macchione</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="./css/resume.css" media="all" />
+	<script src="./js/jquery.js"></script>
+</head>
+<body>
+
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+					<h1>Francesco Macchione</h1>
+					<h2>Mechatronics Engineer</h2>
+				</div>
+
+				<div class="yui-u">
+					<div class="versions">
+						<h3>What are you looking for?</h3>
+						<h3><a class="button" href="resume?version=software">Software</a></h3>
+						<h3><a class="button" href="resume?version=embedded">Embedded Systems</a></h3>
+						<h3><a class="button" href="resume?version=electrical">Electrical</a></h3>
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+
+					
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Skills</h2>
+						</div>
+						<div class="yui-u">
+							<div>
+								<% for(var i = 0; i < resume.skills.length; i++) { %>
+								<% if(i != 0 && i % 3 == 0) { %>
+								</div>
+								<div>
+								<% } %>
+								<div class="talent">
+									<h2><%-resume.skills[i].title%></h2>
+									<p><%-resume.skills[i].description%></p>
+								</div>
+								<% } %>
+							</div>
+						</div>
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Experience</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+
+							<div class="job">
+								<h2>Lumotune</h2>
+								<h3>Application Developer</h3>
+								<h4>Aug. 2014 - Sept. 2014</h4>
+								<p>Independently create a Node.js based web application for image processing and microcontroller communication. Wrote microcontroller code to control hardware chips through I2C.</p>
+							</div>
+
+							<div class="job">
+								<h2>PointClickCare</h2>
+								<h3>Senior Java Software Engineer</h3>
+								<h4>Aug. 2013 - Jan. 2014</h4>
+								<p>Made numerous contributions to the test framework used to run
+								automation tests on the PointClickCare web application. Used Java extensively using STS IDE, based on Eclipse. Worked with the Selenium API to help drive web browsers. Integrated the test framework with JIRA and TestRail using REST API’s.</p>
+							</div>
+
+							<div class="job">
+								<h2>PointClickCare</h2>
+								<h3>Java Developer</h3>
+								<h4>Jan. 2013 - April. 2013</h4>
+								<p>Worked with HTML, CSS, JavaScript, Jquery, and SQL, with a great emphasis on web based Java. Used the Spring framework with the MVC pattern to implement newfeatures into the web application. Was given tasks to work on independently and used online resources and books to complete work</p>
+							</div>
+
+
+							<div class="job last">
+								<h2>Future Temp Glass LTD.</h2>
+								<h3>Programmer</h3>
+								<h4>2001-2004</h4>
+								<p>Worked with HTML, CSS, JavaScript, Jquery, and SQL, with a great emphasis on web based Java. Used the Spring framework with the MVC pattern to implement newfeatures into the web application. Was given tasks to work on independently and used online resources and books to complete work</p>
+							</div>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+
+
+					<div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Education</h2>
+						</div>
+						<div class="yui-u">
+							<h2>University of Waterloo - Waterloo, ON</h2>
+							<h3>Undergraduate Degree in Mechatronics Engineering -- <strong>Sept. 2012 - Present</h3>
+						</div>
+						<div class="yui-u">
+							&nbsp;
+						</div>
+						<div class="yui-u">
+							<h2>Woodbridge College - Vaughan, ON</h2>
+							<h3>High School Diploma</h3>
+						</div>
+					</div><!--// .yui-gf -->
+
+
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+		<div id="ft">
+			<p>Francesco Macchione &mdash; <a href="mailto:fvmacchi@uwaterloo.ca">fvmacchi@uwaterloo.ca</a> &mdash; (647) - 501-4903</p>
+		</div><!--// footer -->
+
+	</div><!-- // inner -->
+
+
+</div><!--// doc -->
+
+<script>
+/*
+(function() {
+	var skills = $(".talent");
+	var max = 0;
+	for(var i = 0; i < skills.length; i++) {
+		if(i % 3 == 0) {
+			if(i != 0) {
+				max += 10;
+				for(var k = 1; k <= 3; k++) {
+					$(skills[i]).height(max);
+				}
+			}
+			max = 0;
+		}
+		if($(skills[i]).height() > max) {
+			max = $(skills[i]).height();
+		}
+	}
+})();
+*/
+</script>
+</body>
+</html>
+
