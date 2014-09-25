@@ -30,9 +30,24 @@ app.configure('production', function(){
 });
 
 app.get("/", function(req, res) {
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var visitor = req.query.visitor;
   var company = {};
   var servePage = function() {
+    setTimeout(function() {
+      var visit = {
+        ip: ip
+      }
+      if(company && company.name) {
+        visit.company = company.name;
+        visit.companyId = company.id;
+      }
+      else {
+        visit.company = "none";
+        visit.companyId = "none";
+      }
+      tools.addVisit(visit, function(){});
+    }, 0);
     res.render("index.ejs", {
       company: company
     });
@@ -54,6 +69,11 @@ app.get("/resume", function(req, res) {
   tools.getResume(type, function(resume) {
     res.render("resume.ejs", {resume: resume});
   });
+});
+
+// Handle 404
+app.use(function(req, res) {
+  res.send('404: Page not Found\nIf you received a link in my resume, please click the link instead. It contains a validation code underneath the hyperlink so that one company cannot pose as another. Thank you.', 404);
 });
 
 app.listen(80, function(){

@@ -37,11 +37,20 @@
     .skill-body p{
         font-size: 20px;
     }
+    .alert-default {
+
+    }
     </style>
 
 </head>
 
 <body>
+    <% if(company && company.name) { %>
+    <div class="visible-lg visible-md visible-sm alert alert-default btn btn-dark alert-dismissible affix-top" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 100;">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3><strong>Hello <%-company.name%>!</strong> Thank you for taking the time to view my website.<h3>
+    </div>
+    <% } %>
 
     <!-- Header -->
     <header id="top" class="header">
@@ -49,16 +58,19 @@
             
         </div>
         <div class="text-vertical-center">
+            <% if(company && company.name) { %>
+    <div class="visible-xs alert alert-default btn-dark alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3><strong>Hello <%-company.name%>!</strong> Thank you for taking the time to view my website.<h3>
+    </div>
+    <% } %>
             <div style="text-align:left;">
                 <img class="img-circle img-thumbnail" src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/6/000/1c4/0c4/2a7b0a2.jpg" />
             </div>
             <h1>Francesco Vincenzo Macchione</h1>
             <h3>Mechatronics Engineer</h3>
             <br>
-            <% if(company && company.name) { %>
-            <h5>Hello <%-company.name%>, thank you for taking the time to view my website.</h5>
-            <% } %>
-            <a href="#about" class="btn btn-dark btn-lg">About</a>
+            <a href="#about" class="btn btn-dark btn-lg">Welcome</a>
             <a href="/resume" class="btn btn-dark btn-lg">Dynamic R&eacute;sum&eacute;</a>
         </div>
     </header>
