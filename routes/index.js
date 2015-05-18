@@ -1,8 +1,7 @@
 
-/*
- * GET home page.
- */
+module.exports = function(app, m, c) {
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+	app.get("/", c.HomeController.index);
+	app.get("/resume", c.HomeController.getResume);
+
 };
