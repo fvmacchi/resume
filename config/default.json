@@ -3,5 +3,6 @@
 		"database": "resume",
 		"username": "root",
 		"password": ""
-	}
+	},
+	"company_hash_secret": ""
 }

@@ -53,10 +53,6 @@ exports.getResume = function(type, callback) {
 	});
 };
 
-exports.getCompany = function(id, callback) {
-	m.Company.find({where: {id: id}}).then(callback);
-};
-
 exports.addVisit = function(visit, callback) {
 	visit.time = (new Date()).toString();
 	m.Visit.create(visit).then(callback);
