@@ -71,7 +71,7 @@
             <h3>Mechatronics Engineer</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Welcome</a>
-            <a href="/resume" class="btn btn-dark btn-lg">Dynamic R&eacute;sum&eacute;</a>
+            <a href="/resume<%=company?'?company='+company.id:''%>" class="btn btn-dark btn-lg">Dynamic R&eacute;sum&eacute;</a>
         </div>
     </header>
 
@@ -83,7 +83,7 @@
                     <h2>Welcome</h2>
                     <p class="lead">This isn't just a static website. This is powered with <a href="http://nodejs.org">Node.js</a> and is hosted off of my own old computer. No GitHub Pages or Amazon S3 here.</p>
                     <h3>Why?</h3>
-                    <p class="lead">Dynamic applications are awesome! Check out this auto generated <a href="/resume">r&eacute;sum&eacute;</a>.</p>
+                    <p class="lead">Dynamic applications are awesome! Check out this auto generated <a href="/resume<%=company?'?company='+company.id:''%>">r&eacute;sum&eacute;</a>.</p>
                 </div>
             </div>
             <!-- /.row -->

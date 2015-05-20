@@ -45,13 +45,3 @@ exports.index = function(req, res) {
 			c.tools.addVisit(visit, function(){});
 		});
 };
-
-exports.getResume = function(req, res) {
-	var type = req.query.version;
-	if(!(type == "software" || type == "electrical" || type == "embedded")) {
-		type = "all"
-	}
-	c.tools.getResume(type, function(resume) {
-		res.render("resume.ejs", {resume: resume});
-	});
-};

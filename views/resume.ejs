@@ -11,27 +11,42 @@
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
 	<link rel="stylesheet" type="text/css" href="./css/resume.css" media="all" />
 	<script src="./js/jquery.js"></script>
+
 </head>
 <body>
 
 <div id="doc2" class="yui-t7">
-	<div id="inner">
+	<div id="inner" <%if(print){%>style="margin:0px;"<%}%>>
 	
 		<div id="hd">
 			<div class="yui-gc">
-				<div class="yui-u first">
+				<div class="yui-u first" style="width:50%">
 					<h1>Francesco Macchione</h1>
-					<h2>Mechatronics Engineer</h2>
+					<h2>3A Mechatronics Engineer</h2>
 				</div>
 
+				<% if(print) { %>
+				<div class="yui-u" style="width: 48%; text-align:center">
+					<% if(company) { %>
+					<span class="company-link"><a href="http://localhost:8000?visitor=<%=company.id%>">francescomacc.com/<%=company.name.replace(/\s+/g, '')%></a></span>
+					<% } %>
+					<p>(647) - 501-4903</p>
+					<p>20471727</p>
+					<p>28 Cardill Cres.</p>
+					<p>Waterloo, Ontario</p>
+					<p><a href="mailto:fvmacchi@uwaterloo.ca">fvmacchi@uwaterloo.ca</a></p>
+					<p>github: <a href="https://github.com/fvmacchi">fvmacchi</a></p>
+				</div>
+				<% } else { %>
 				<div class="yui-u">
 					<div class="versions">
 						<h3>What are you looking for?</h3>
 						<h3><a class="button" href="resume?version=software">Software</a></h3>
 						<h3><a class="button" href="resume?version=embedded">Embedded Systems</a></h3>
 						<h3><a class="button" href="resume?version=electrical">Electrical</a></h3>
-					</div><!--// .contact-info -->
+					</div>
 				</div>
+				<% } %>
 			</div><!--// .yui-gc -->
 		</div><!--// hd -->
 
@@ -80,35 +95,51 @@
 								<h2>Lumotune</h2>
 								<h3>Application Developer</h3>
 								<h4>Aug. 2014 - Sept. 2014</h4>
-								<p>Independently create a Node.js based web application for image processing and microcontroller communication. Wrote microcontroller code to control hardware chips through I2C.</p>
+								<p>Wrote microcontroller code to control hardware chips through I2C. Created a Node.js based web application for image processing and microcontroller communication.</p>
 							</div>
 
 							<div class="job">
 								<h2>PointClickCare</h2>
 								<h3>Senior Java Software Engineer</h3>
 								<h4>Aug. 2013 - Jan. 2014</h4>
-								<p>Made numerous contributions to the test framework used to run
-								automation tests on the PointClickCare web application. Used Java extensively using STS IDE, based on Eclipse. Worked with the Selenium API to help drive web browsers. Integrated the test framework with JIRA and TestRail using REST API’s.</p>
+								<p>Made numerous contributions to the automation test framework. Worked with the Selenium API to help drive web browsers. Integrated the test framework with JIRA and TestRail using REST API’s.</p>
 							</div>
 
 							<div class="job">
 								<h2>PointClickCare</h2>
 								<h3>Java Developer</h3>
 								<h4>Jan. 2013 - April. 2013</h4>
-								<p>Worked with HTML, CSS, JavaScript, Jquery, and SQL, with a great emphasis on web based Java. Used the Spring framework with the MVC pattern to implement newfeatures into the web application. Was given tasks to work on independently and used online resources and books to complete work</p>
+								<p>Worked with HTML, CSS, JavaScript, Jquery, and SQL, with a great emphasis on web based Java. Used the Spring framework with the MVC pattern to implement new features into the web application.</p>
 							</div>
-
 
 							<div class="job last">
 								<h2>Future Temp Glass LTD.</h2>
-								<h3>Programmer</h3>
+								<h3>CAD Programmer</h3>
 								<h4>Jul. 2011 – Aug. 2011, Jul. 2012 – Aug. 2012</h4>
-								<p>Made programs on TechnoCAD, a specialized CAD program used to cut flat sheets of glass. Cut glass with notches, rakes, holes, radius corners, and cut outs.</p>
 							</div>
 
 						</div><!--// .yui-u -->
 					</div><!--// .yui-gf -->
 
+					<% if(resume.Projects && resume.Projects.length) { %>
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Relevant Projects</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+
+							<% resume.Projects.forEach(function(project, index) { %>
+								<div class="project <%=index+1==resume.Projects.length?'last':''%>">
+									<h2><%=project.name%></h2>
+									<p><%=project.description%></p>
+								</div>
+							<% }); %>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+					<% } %>
 
 					<div class="yui-gf last">
 						<div class="yui-u first">

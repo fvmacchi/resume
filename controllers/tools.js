@@ -16,8 +16,10 @@ module.exports = function(models, controllers) {
 
 
 exports.getResume = function(type, callback) {
-	console.log("TYPE: " + type);
-	m.Resume.find({where: {id:type}}).then(function(resume) {
+	m.Resume.find({
+		where: {id:type},
+		include: [m.Project]
+	}).then(function(resume) {
 		var fetchedSkills = function() {
 			callback(resume);
 		};
@@ -35,7 +37,6 @@ exports.getResume = function(type, callback) {
 				}
 			}
 			m.ResumeSkill.findAll({where: {id: {in: skills}}}).then(function(skillRows) {
-				console.log(JSON.stringify(skillRows, null, 4))
 				var orderedSkills = [];
 				for(var i = 0; i < skills.length; i++) {
 					for(var k = 0; k < skillRows.length; k++) {
@@ -46,7 +47,6 @@ exports.getResume = function(type, callback) {
 					}
 				}
 				resume.skills = orderedSkills;
-				console.log(JSON.stringify(orderedSkills, null, 4))
 				fetchedSkills();
 			});
 		}
