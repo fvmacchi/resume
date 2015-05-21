@@ -28,7 +28,9 @@
 				<% if(print) { %>
 				<div class="yui-u" style="width: 48%; text-align:center">
 					<% if(company) { %>
-					<span class="company-link"><a href="http://localhost:8000?visitor=<%=company.id%>">francescomacc.com/<%=company.name.replace(/\s+/g, '')%></a></span>
+					<span class="company-link"><a href="http://francescomacc.com?visitor=<%=company.id%>">francescomacc.com/<%=company.name.replace(/\s+/g, '')%></a></span>
+					<% } else { %>
+					<span class="company-link"><a href="http://francescomacc.com">francescomacc.com</a></span>
 					<% } %>
 					<p>(647) - 501-4903</p>
 					<p>20471727</p>

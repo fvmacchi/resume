@@ -17,7 +17,7 @@ exports.init = function(req, res) {
 	{
 	  id: "all",
 	  title: "Generic",
-	  skills: '["java", "c", "microcontrollers", "chips", "node", "git", "opamps", "digitalLogic", "linux", "python", "dns", "soldering", "android"]'
+	  skills: '["java", "c", "microcontrollers", "chips", "node", "git", "scripting", "opamps", "digitalLogic", "linux", "python", "dns", "soldering", "android"]'
 	},
 	{
 	  id: "software",
@@ -27,12 +27,12 @@ exports.init = function(req, res) {
 	{
 	  id: "embedded",
 	  title: "Embedded Systems",
-	  skills: '["c", "microcontrollers", "chips", "soldering", "java", "linux", "digitalLogic", "opamps"]'
+	  skills: '["c", "microcontrollers", "chips", "soldering", "scripting", "linux", "digitalLogic", "opamps"]'
 	},
 	{
 	  id: "electrical",
 	  title: "Electrical",
-	  skills: '["chips", "microcontrollers", "digitalLogic", "opamps", "soldering"]'
+	  skills: '["chips", "microcontrollers", "digitalLogic", "opamps", "soldering", "scripting"]'
 	}
 	];
 
@@ -135,11 +135,11 @@ exports.init = function(req, res) {
 	];
 	// c.CompanyController.createCompanies(companies);
 
-	async.eachSeries(resumes, function(resume, callback) {
-		m.Resume.findOrCreate({where: resume}).then(function(){
-			callback();
-		});
-	});
+	// async.eachSeries(resumes, function(resume, callback) {
+	// 	m.Resume.findOrCreate({where: resume}).then(function(){
+	// 		callback();
+	// 	});
+	// });
 
 	// projects.forEach(function(project) {
 	// 	m.Project.findOrCreate({where: project});
@@ -190,7 +190,7 @@ exports.createPrintableResumeLinks = function() {
 			var contents = "<html><body>";
 			companies.forEach(function(company) {
 				resumes.forEach(function(resume) {
-					contents += "<a target='_blank' href='http://localhost:8000/resume?print=true&version=";
+					contents += "<a target='_blank' href='http://francescomacc.com/resume?print=true&version=";
 					contents += resume.id;
 					contents += "&company=" + company.id;
 					contents += "'>" + company.name + " : " + resume.title;
