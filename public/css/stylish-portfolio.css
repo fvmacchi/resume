@@ -48,7 +48,7 @@ body {
 .btn-light {
     border-radius: 0;
     color: #333;
-    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,0.8);
 }
 
 .btn-light:hover,

@@ -49,6 +49,7 @@
     <div class="visible-lg visible-md visible-sm alert alert-default btn btn-dark alert-dismissible affix-top" role="alert" style="position: fixed; top: 20px; right: 20px; z-index: 100;">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h3><strong>Hello <%-company.name%>!</strong> Thank you for taking the time to view my website.<h3>
+        <a href="#project" class="btn btn-light btn-lg">Check Out My Latest Project</a>
     </div>
     <% } %>
 
@@ -65,12 +66,13 @@
     </div>
     <% } %>
             <div style="text-align:left;">
-                <img class="img-circle img-thumbnail" src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/6/000/1c4/0c4/2a7b0a2.jpg" />
+                <img class="img-circle img-thumbnail" src="img/face.jpg" />
             </div>
             <h1>Francesco Vincenzo Macchione</h1>
             <h3>Mechatronics Engineer</h3>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Welcome</a>
+            <a href="#project" class="btn btn-dark btn-lg">Check Out My Latest Project</a>
             <a href="/resume<%=company?'?company='+company.id:''%>" class="btn btn-dark btn-lg">Dynamic R&eacute;sum&eacute;</a>
         </div>
     </header>
@@ -92,11 +94,46 @@
     </section>
 
     <!-- Versions -->
-    <section class="bg-primary">
+    <section id="project" class="bg-primary">
         <div class="container" style="padding-top: 20px; padding-bottom: 20px;">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>This site is still in the beginning stages! <i class="fa fa-cogs"></i></h2>
+                    <h2>Wifi Controlled Power Bar</h2>
+                    <hr class="small">
+                    <p class="lead">This box acts as a power bar with four outlets that can be turned on and off individually. 
+                    The Wi-Fi enabled microcontroller allows me to control the outlets from anywhere via my website. 
+                    It can be used with anything that normally plugs into a wall outlet, so long as the current stays under 10A. </p>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <img class="img-portfolio img-responsive img-rounded" src="img/project-front.jpg">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive img-rounded" src="img/project-top.jpg">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive img-rounded" src="img/project-side.jpg">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                    <img class="img-portfolio img-responsive img-rounded" src="img/project-micro.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="small">
+                    <p class="lead">A simple phone charger is used to provide power to the microcontroller. 
+                    Since the microcontroller runs on 3.3V and the relay requires a 5V source, VIN on the micro is used, since VIN is the raw power before being regulated down to 3.3V.
+                    </p>
+                    <hr class="small">
+                    <p class="lead">The wires used are rated for 16A, but the relay is only rated for 10A. A 10A fuse is installed in case of overloading.</p>
+                    <hr class="small">
+                    <p class="lead">The relay board is active low, so pull down resistors are placed so that the outlets are default on while the microcontroller is in an indeterminent state.</p>
                 </div>
             </div>
         </div>
@@ -110,7 +147,7 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong>Contact Me</strong>
                     </h4>
-                    <p>28 Cardill <br>Waterloo, ON</p>
+                    <p>316 King Street, Apt 702 <br>Waterloo, ON</p>
                     <ul class="list-unstyled">
                         <li><i class="fa fa-phone fa-fw"></i> (647) 501-4903</li>
                         <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:fvmacchi@uwaterloo.ca">fvmacchi@uwaterloo.ca</a>
